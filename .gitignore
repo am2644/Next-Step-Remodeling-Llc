@@ -48,3 +48,7 @@ next-env.d.ts
 
 # local tool settings
 .claude/settings.local.json
+
+# source exports (content already imported into the site and database)
+/google-maps-export/
+/instagram-export/
