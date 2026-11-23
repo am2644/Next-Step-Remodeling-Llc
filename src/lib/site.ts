@@ -1,7 +1,17 @@
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function assetUrl(path: string) {
+  if (!path || !path.startsWith("/")) return path;
+  if (BASE_PATH && path.startsWith(`${BASE_PATH}/`)) return path;
+  return `${BASE_PATH}${path}`;
+}
+
 export const PHONE_DISPLAY = "(801) 698-5482";
 export const PHONE_HREF = "tel:+18016985482";
 export const EMAIL_DISPLAY = "nextstepremodeling@gmail.com";
 export const EMAIL_MAILTO = "mailto:nextstepremodeling@gmail.com";
+export const INSTAGRAM_URL = "https://www.instagram.com/next_step_remodeling_llc/";
+export const INSTAGRAM_HANDLE = "@next_step_remodeling_llc";
 export const LICENSE_NUMBER = "8416576-5501";
 export const SERVICE_AREA = "Sandy, UT & the Salt Lake Valley";
 export const GOOGLE_REVIEWS_URL =

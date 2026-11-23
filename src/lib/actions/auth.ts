@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ADMIN_COOKIE, ADMIN_COOKIE_MAX_AGE } from "@/lib/admin-constants";
 import { passwordMatches } from "@/lib/auth";
+import { BASE_PATH } from "@/lib/site";
 
 export type LoginState = {
   error?: string;
@@ -29,7 +30,7 @@ export async function loginAdmin(
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
-    path: "/",
+    path: BASE_PATH || "/",
     maxAge: ADMIN_COOKIE_MAX_AGE,
   });
 

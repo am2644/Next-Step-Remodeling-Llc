@@ -2,9 +2,12 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import QuoteForm from "@/components/ui/QuoteForm";
 import {
+  assetUrl,
   EMAIL_DISPLAY,
   EMAIL_MAILTO,
   GOOGLE_REVIEWS_URL,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
   LICENSE_NUMBER,
   MAP_EMBED_URL,
   PHONE_DISPLAY,
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     title: "Contact Next Step Remodeling | Sandy & Salt Lake City, UT",
     description:
       "Contact Next Step Remodeling in Sandy, UT. Call (801) 698-5482 or request a free estimate for your kitchen, bathroom, basement, or addition.",
-    images: ["/assets/hero.jpg"],
+    images: [assetUrl("/assets/hero.jpg")],
   },
 };
 
@@ -68,6 +71,24 @@ export default function ContactPage() {
                     <span className="block text-[11px] uppercase tracking-[0.18em] text-white/40">Email</span>
                     <span className="mt-1 block break-words text-sm font-semibold text-white">
                       {EMAIL_DISPLAY}
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/5 text-gold ring-1 ring-white/10 transition group-hover:bg-white/10">
+                    <svg className="h-5 w-5" aria-hidden="true"><use href="#icon-instagram" /></svg>
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[11px] uppercase tracking-[0.18em] text-white/40">
+                      Instagram
+                    </span>
+                    <span className="mt-1 block text-sm font-semibold text-white">
+                      {INSTAGRAM_HANDLE}
                     </span>
                   </span>
                 </a>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import AdminNav from "@/components/admin/AdminNav";
 import { logoutAdmin } from "@/lib/actions/auth";
 import { requireAdmin } from "@/lib/auth";
+import { assetUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Admin | Next Step Remodeling",
@@ -19,7 +20,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/" className="inline-flex" aria-label="Next Step Remodeling home">
             <span className="flex items-center rounded-lg bg-white px-2 py-1.5">
               <img
-                src="/assets/logo.png"
+                src={assetUrl("/assets/logo.png")}
                 alt="Next Step Remodeling"
                 width="690"
                 height="590"

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PortfolioGallery from "@/components/portfolio/PortfolioGallery";
 import { prisma } from "@/lib/db";
+import { assetUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Remodeling Projects in Salt Lake City, UT | Next Step Remodeling",
     description:
       "Recent kitchen, basement, addition, and new-build projects in Sandy and Salt Lake City, UT by Next Step Remodeling.",
-    images: ["/assets/hero.jpg"],
+    images: [assetUrl("/assets/hero.jpg")],
   },
 };
 

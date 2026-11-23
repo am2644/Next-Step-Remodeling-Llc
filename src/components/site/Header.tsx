@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { NAV_LINKS } from "@/lib/site";
+import { assetUrl, NAV_LINKS } from "@/lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function Header() {
           <Link href="/" className="flex items-center" aria-label="Next Step Remodeling home">
             <span className="flex items-center rounded-xl bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-black/5">
               <img
-                src="/assets/logo.png"
+                src={assetUrl("/assets/logo.png")}
                 alt="Next Step Remodeling"
                 width="690"
                 height="590"

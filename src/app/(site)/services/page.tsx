@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { assetUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Remodeling Services in Salt Lake City, UT | Next Step Remodeling",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: "Remodeling Services in Salt Lake City, UT | Next Step Remodeling",
     description:
       "Kitchen, bathroom, basement, addition, and whole-home remodeling services in Sandy, Salt Lake City, and the Wasatch Front. Owner-led craftsmanship and free estimates from Next Step Remodeling.",
-    images: ["/assets/hero.jpg"],
+    images: [assetUrl("/assets/hero.jpg")],
   },
 };
 
@@ -53,7 +54,7 @@ export default function ServicesPage() {
               className="opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out"
             >
               <img
-                src="/assets/work/kitchen-white-island.jpg"
+                src={assetUrl("/assets/work/kitchen-white-island.jpg")}
                 alt="White shaker kitchen with a large island, quartz countertops, and tile backsplash in Utah"
                 width="1600"
                 height="2133"
@@ -123,7 +124,7 @@ export default function ServicesPage() {
               className="opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out"
             >
               <img
-                src="/assets/work/basement-bedroom.jpg"
+                src={assetUrl("/assets/work/basement-bedroom.jpg")}
                 alt="Finished basement bedroom with new light oak flooring, fresh paint, and white doors in Utah"
                 width="1600"
                 height="1200"
@@ -156,7 +157,7 @@ export default function ServicesPage() {
               className="opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out lg:order-1"
             >
               <img
-                src="/assets/work/deck-balcony.jpg"
+                src={assetUrl("/assets/work/deck-balcony.jpg")}
                 alt="Before-and-after of a two-story deck and covered balcony rebuild with stone retaining wall in Utah"
                 width="1536"
                 height="1024"

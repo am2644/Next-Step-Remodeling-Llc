@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import IconSprite from "@/components/site/IconSprite";
+import { assetUrl } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,16 +17,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Kitchen, Bath & Basement Remodeling in Salt Lake City, UT | Next Step Remodeling",
   description:
     "Top-rated kitchen, bathroom, and basement remodeling in Sandy and Salt Lake City, UT. Owner-led projects, clear communication, and a 5.0 Google rating. Get a free quote.",
-  icons: { icon: "/assets/favicon.png" },
+  icons: { icon: assetUrl("/assets/favicon.png") },
   openGraph: {
     type: "website",
     title: "Kitchen, Bath & Basement Remodeling in Salt Lake City, UT | Next Step Remodeling",
     description:
       "Top-rated kitchen, bathroom, and basement remodeling in Sandy and Salt Lake City, UT. Owner-led projects, clear communication, and a 5.0 Google rating. Get a free quote.",
-    images: ["/assets/hero.jpg"],
+    images: [assetUrl("/assets/hero.jpg")],
   },
   twitter: { card: "summary_large_image" },
 };

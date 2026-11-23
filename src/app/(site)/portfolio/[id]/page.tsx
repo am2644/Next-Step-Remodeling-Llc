@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { PORTFOLIO_CATEGORY_LABELS } from "@/lib/site";
+import { assetUrl, PORTFOLIO_CATEGORY_LABELS } from "@/lib/site";
 import { getWorkProject } from "@/lib/work";
 
 export const dynamic = "force-dynamic";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: WorkProjectPageProps): Promis
     openGraph: {
       title: `${item.title} | Next Step Remodeling`,
       description: content.summary,
-      images: [item.imageUrl],
+      images: [assetUrl(item.imageUrl)],
     },
   };
 }
@@ -93,7 +93,7 @@ export default async function WorkProjectPage({ params }: WorkProjectPageProps) 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <img
-            src={item.imageUrl}
+            src={assetUrl(item.imageUrl)}
             alt={`${item.title} — ${categoryLabel.toLowerCase()} project in the Salt Lake Valley, UT`}
             width="1400"
             height="1050"
@@ -215,7 +215,7 @@ export default async function WorkProjectPage({ params }: WorkProjectPageProps) 
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-ink">
                     <img
-                      src={project.imageUrl}
+                      src={assetUrl(project.imageUrl)}
                       alt={project.title}
                       width="1400"
                       height="1050"

@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { assetUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Next Step Remodeling | Sandy & Salt Lake City, UT",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: "About Next Step Remodeling | Sandy & Salt Lake City, UT",
     description:
       "Meet Parker and the team behind Next Step Remodeling — a licensed Utah contractor serving Sandy, Salt Lake City, and the Wasatch Front with 10 five-star Google reviews.",
-    images: ["/assets/next-step-owner.jpg"],
+    images: [assetUrl("/assets/next-step-owner.jpg")],
   },
 };
 
@@ -72,7 +73,7 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-ink">
                 <img
-                  src="/assets/next-step-owner.jpg"
+                  src={assetUrl("/assets/next-step-owner.jpg")}
                   alt="Next Step Remodeling crew member on site during a home renovation"
                   width={1024}
                   height={1024}

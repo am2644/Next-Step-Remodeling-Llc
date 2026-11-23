@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS, getPost, type BlogBlock } from "@/lib/blog";
+import { assetUrl } from "@/lib/site";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      images: [post.heroImage],
+      images: [assetUrl(post.heroImage)],
     },
   };
 }
@@ -53,7 +54,7 @@ function ArticleBlock({ block }: { block: BlogBlock }) {
       return (
         <figure>
           <img
-            src={block.src}
+            src={assetUrl(block.src)}
             alt={block.alt}
             width="1400"
             height="1050"
@@ -123,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-5">
           <img
-            src={post.heroImage}
+            src={assetUrl(post.heroImage)}
             alt={post.heroAlt}
             width="1400"
             height="1050"

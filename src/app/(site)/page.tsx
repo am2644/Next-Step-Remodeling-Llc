@@ -3,11 +3,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/ui/QuoteForm";
 import ReviewsSwiper from "@/components/ui/ReviewsSwiper";
+import { INSTAGRAM_POSTS } from "@/lib/instagram";
 import { REVIEWS } from "@/lib/reviews";
 import {
+  assetUrl,
   EMAIL_DISPLAY,
   EMAIL_MAILTO,
   GOOGLE_REVIEWS_URL,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
   MAP_EMBED_URL,
   PHONE_DISPLAY,
   PHONE_HREF,
@@ -21,7 +25,7 @@ export const metadata: Metadata = {
     title: "Kitchen, Bath & Basement Remodeling in Salt Lake City, UT | Next Step Remodeling",
     description:
       "Top-rated kitchen, bathroom, and basement remodeling in Sandy and Salt Lake City, UT. Owner-led projects, clear communication, and a 5.0 Google rating. Get a free quote.",
-    images: ["/assets/hero.jpg"],
+    images: [assetUrl("/assets/hero.jpg")],
   },
 };
 
@@ -56,7 +60,7 @@ export default function HomePage() {
     <>
       <section className="relative isolate flex min-h-[55svh] items-center overflow-hidden bg-ink text-white">
         <img
-          src="/assets/hero.jpg"
+          src={assetUrl("/assets/hero.jpg")}
           alt="Warm wood kitchen with curved islands and mountain views in a Next Step Remodeling project"
           width="1920"
           height="1280"
@@ -127,7 +131,7 @@ export default function HomePage() {
                 className="group/image relative block overflow-hidden rounded-2xl bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 <img
-                  src="/assets/work/kitchen-white-island.jpg"
+                  src={assetUrl("/assets/work/kitchen-white-island.jpg")}
                   alt="White shaker kitchen with a large island, quartz counters, and tiled backsplash in Utah"
                   width="1600"
                   height="2133"
@@ -212,7 +216,7 @@ export default function HomePage() {
                 className="group/image relative block overflow-hidden rounded-2xl bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 <img
-                  src="/assets/work/great-room.jpg"
+                  src={assetUrl("/assets/work/great-room.jpg")}
                   alt="Vaulted great room with a coffered wood ceiling, chandelier, and mountain views in Utah"
                   width="1600"
                   height="1067"
@@ -338,7 +342,7 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                   <img
-                    src={project.image}
+                    src={assetUrl(project.image)}
                     alt={project.alt}
                     width="1600"
                     height="1200"
@@ -359,6 +363,68 @@ export default function HomePage() {
                   </span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="instagram" className="scroll-mt-24 bg-mist py-28 sm:py-32 lg:py-40">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div
+            data-reveal
+            className="flex flex-col gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out xl:flex-row xl:items-end xl:justify-between"
+          >
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark">
+                Instagram
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+                Follow Us on Instagram
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+                Project updates from Sandy and across the Salt Lake Valley — finished rooms, progress
+                shots, and behind-the-scenes work. Follow {INSTAGRAM_HANDLE}.
+              </p>
+            </div>
+
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            >
+              <svg className="h-4 w-4 text-gold" aria-hidden="true"><use href="#icon-instagram" /></svg>
+              Follow on Instagram
+            </a>
+          </div>
+
+          <div
+            data-reveal
+            className="mt-14 grid gap-4 opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {INSTAGRAM_POSTS.map((post) => (
+              <a
+                key={post.image}
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+                  <img
+                    src={assetUrl(post.image)}
+                    alt={post.alt}
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-ink/75 text-white backdrop-blur-sm">
+                    <svg className="h-4 w-4" aria-hidden="true"><use href="#icon-instagram" /></svg>
+                  </span>
+                </div>
+                <p className="flex-1 p-5 text-sm leading-6 text-slate-600">{post.caption}</p>
+              </a>
             ))}
           </div>
         </div>

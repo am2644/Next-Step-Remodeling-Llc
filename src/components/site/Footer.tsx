@@ -1,7 +1,10 @@
 import Link from "next/link";
 import {
+  assetUrl,
   EMAIL_DISPLAY,
   EMAIL_MAILTO,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
   LICENSE_NUMBER,
   NAV_LINKS,
   PHONE_DISPLAY,
@@ -20,7 +23,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex" aria-label="Next Step Remodeling home">
               <span className="flex items-center rounded-xl bg-white px-3 py-2">
                 <img
-                  src="/assets/logo.png"
+                  src={assetUrl("/assets/logo.png")}
                   alt="Next Step Remodeling"
                   width="690"
                   height="590"
@@ -97,6 +100,17 @@ export default function Footer() {
                 <a href={EMAIL_MAILTO} className="flex items-start gap-3 transition hover:text-white">
                   <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-mail" /></svg>
                   <span>{EMAIL_DISPLAY}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 transition hover:text-white"
+                >
+                  <svg className="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-instagram" /></svg>
+                  {INSTAGRAM_HANDLE}
                 </a>
               </li>
               <li className="flex items-center gap-3">

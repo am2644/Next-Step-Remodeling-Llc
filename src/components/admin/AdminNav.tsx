@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BASE_PATH } from "@/lib/site";
 
 const LINKS = [
   { href: "/admin", label: "Dashboard" },
@@ -10,7 +11,11 @@ const LINKS = [
 ];
 
 export default function AdminNav() {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname =
+    BASE_PATH && rawPathname.startsWith(BASE_PATH)
+      ? rawPathname.slice(BASE_PATH.length) || "/"
+      : rawPathname;
 
   return (
     <nav

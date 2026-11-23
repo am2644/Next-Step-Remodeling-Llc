@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import FallbackImage from "@/components/ui/FallbackImage";
-import { PORTFOLIO_CATEGORY_LABELS, PROJECT_ASPECTS } from "@/lib/site";
+import { assetUrl, PORTFOLIO_CATEGORY_LABELS, PROJECT_ASPECTS } from "@/lib/site";
 
 export type GalleryItem = {
   id: number;
@@ -85,7 +85,7 @@ export default function PortfolioGallery({
                   </span>
                 </div>
                 <FallbackImage
-                  src={item.imageUrl}
+                  src={assetUrl(item.imageUrl)}
                   alt={`${item.title} — ${categoryLabel.toLowerCase()} remodeling project in the Salt Lake Valley, UT`}
                   width={1200}
                   height={900}

@@ -1,64 +1,53 @@
+import { INSTAGRAM_URL } from "./site";
+
 export type InstagramPost = {
-  id: string;
   href: string;
   image: string;
   alt: string;
   caption: string;
-  type: "Post" | "Reel";
 };
 
 export const INSTAGRAM_POSTS: InstagramPost[] = [
   {
-    id: "Dfx0w7JnJQ5",
-    href: "https://www.instagram.com/zm.clientshowcase/reel/Dfx0w7JnJQ5/",
-    image: "/assets/instagram/post-outdoor.jpg",
-    alt: "New wrap-around outdoor deck with white railings, seating, and planters",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/bath-double-vanity.jpg",
+    alt: "Bathroom remodel with a white double vanity, two gold-framed mirrors, and a walk-in shower",
     caption:
-      "From 'we never go out there' to the best seat in the house. Turning unused space into a full wrap-around dream.",
-    type: "Reel",
+      "Double vanity, gold mirrors, and a walk-in shower — a bathroom that finally feels finished.",
   },
   {
-    id: "DfoZERMjXby",
-    href: "https://www.instagram.com/zm.clientshowcase/reel/DfoZERMjXby/",
-    image: "/assets/instagram/post-restoration.jpg",
-    alt: "Restored interior room with new flooring and fresh paint after water damage",
-    caption: "When nature unleashes its fury, we're ready to bring serenity back.",
-    type: "Reel",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/bath-freestanding-tub.jpg",
+    alt: "Bathroom with a freestanding tub, herringbone tile shower, and white double vanity",
+    caption:
+      "Freestanding tub, herringbone tile, and a glass shower. A primary bath built to unwind in.",
   },
   {
-    id: "Dei1KtYlX4X",
-    href: "https://www.instagram.com/zm.clientshowcase/p/Dei1KtYlX4X/",
-    image: "/assets/instagram/post-porch.jpg",
-    alt: "Before-and-after collage of new siding, porches, and an outdoor seating area",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/kitchen-blue-island.jpg",
+    alt: "Kitchen remodel with a blue island, grey cabinets, and light wood flooring",
     caption:
-      "A little home glow-up just in time for the cooler weather! Fresh siding, new front and back porches, and a cozy outdoor fire spot.",
-    type: "Post",
+      "Blue island, warm wood floors, and quartz counters. A kitchen refresh with room to move.",
   },
   {
-    id: "DebAuBpldwe",
-    href: "https://www.instagram.com/zm.clientshowcase/p/DebAuBpldwe/",
-    image: "/assets/instagram/post-gym.jpg",
-    alt: "New gym wall mirror installed beside treadmills overlooking downtown Austin",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/roof-truss-addition.jpg",
+    alt: "Crane setting roof trusses on a home addition in Utah",
     caption:
-      "True strength deserves a flawless reflection. We seamlessly replaced this gym wall mirror right by the treadmills.",
-    type: "Post",
+      "Setting trusses on an addition — structural work that makes room for the next chapter.",
   },
   {
-    id: "DeV7fyKl0NP",
-    href: "https://www.instagram.com/zm.clientshowcase/reel/DeV7fyKl0NP/",
-    image: "/assets/instagram/post-showcase.jpg",
-    alt: "ZM Home Improvements contact card over a bright remodeled kitchen",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/bath-marble-shower.jpg",
+    alt: "Marble-look tiled shower and tub surround with a dark vanity in a bathroom remodel",
     caption:
-      "Turn your vision into reality with exceptional upgrades. Connect with our skilled professionals today.",
-    type: "Reel",
+      "Marble-look tile and a recessed niche — clean lines that hold up to daily use.",
   },
   {
-    id: "DeRtEthlWOD",
-    href: "https://www.instagram.com/zm.clientshowcase/p/DeRtEthlWOD/",
-    image: "/assets/instagram/post-bar.jpg",
-    alt: "Built-in home bar with dark cabinetry and a beverage fridge beneath open stairs",
+    href: INSTAGRAM_URL,
+    image: "/assets/instagram/bath-floating-vanity.jpg",
+    alt: "Floating black double vanity with a white counter, black fixtures, and sconce lighting",
     caption:
-      "Crisp air, hot cider, and... home improvements? October is the perfect time to get your home ready for the hosting season.",
-    type: "Post",
+      "Floating black vanity with a double sink and matte fixtures. Small bathroom, strong statement.",
   },
 ];

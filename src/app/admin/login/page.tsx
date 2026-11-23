@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LoginForm from "@/components/admin/LoginForm";
+import { assetUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Admin Sign In | Next Step Remodeling",
@@ -18,7 +19,7 @@ export default function AdminLoginPage() {
         >
           <span className="flex items-center rounded-xl bg-white px-3 py-2">
             <img
-              src="/assets/logo.png"
+              src={assetUrl("/assets/logo.png")}
               alt="Next Step Remodeling"
               width="690"
               height="590"
